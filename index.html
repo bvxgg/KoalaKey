@@ -1,13 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
     <link rel="icon" type="image/svg" href="assets/favicon.svg">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <p>Hello</p>
+    <header>
+        <img class="header-logo" src="assets/header-logo.svg" alt="Logo KoalaKey">
+        <nav>
+            <div class="burger" id="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div class="menu" id="menu">
+              <a href="">Accueil</a>
+              <a href="">Nos produits</a>
+              <a href="">Actualités</a>
+              <a href="">À propos</a>
+            </div>
+          </nav>          
+    </header>
+    <!-- Conteneur principal pour le carrousel -->
+    <div class="container">
+        <!-- Élément carrousel -->
+        <div class="carrousel">
+            <!-- Conteneur interne pour les diapositives -->
+            <div class="carrousel-inner">
+                <div class="slide">
+                    <img src="assets/accueil-mobile-carrousel-1.jpg" alt="Image clavier carrousel 1">
+                </div>
+                <div class="slide">
+                    <img src="assets/accueil-mobile-carrousel-2.jpg" alt="Image clavier carrousel 2">
+                </div>
+                <div class="slide">
+                    <img src="assets/accueil-mobile-carrousel-3.jpg" alt="Image clavier carrousel 3">
+                </div>
+            </div>
+            <!-- Conteneur pour les boutons de navigation -->
+            <div class="carrousel-controls">
+                <button id="prev">Précédent</button>
+                <button id="next">Suivant</button>
+            </div>
+        </div>
+    </div>
+    <!-- Section articles featured -->
+    <div class="featured">
+            <h2>Les nouveautés !</h2>
+        <div class="features-inner">
+            <ul>
+                <li>
+                    <img src="assets/accueil-mobile-featured-1.jpg" alt="Image Clavier Featured 1">
+                    <p>Clavier</p>
+                </li>
+                <li>
+                    <img src="assets/accueil-mobile-featured-2.jpg" alt="Image Clavier Featured 2">
+                    <p>Clavier</p>
+                </li>
+                <li>
+                    <img src="assets/accueil-mobile-featured-3.jpg" alt="Image Clavier Featured 3">
+                    <p>Clavier</p>
+                </li>
+                <li>
+                    <img src="assets/accueil-mobile-featured-4.jpg" alt="Image Clavier Featured 4">
+                    <p>Clavier</p>
+                </li>
+            </ul>
+        </div>
+        <button>
+            Plus
+        </button>
+    </div>
+    <!-- Section notre histoire -->
+    <div class="about">
+        <h2>Notre histoire.</h2>
+        <div>
+            <img src="assets/accueil-mobile-about-1.jpg" alt="Image Clavier Histoire 1">
+            <h3>Une passion avant tout</h3>
+            <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias.
+            </p>
+            <button>En savoir plus</button>
+        </div>
+        <div>
+            <img src="assets/accueil-mobile-about-2.jpg" alt="Image Clavier Histoire 2">
+            <h3>Des années d'expérience</h3>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem dolorem neque culpa aut voluptatem voluptas vero, sunt at explicabo nihil ipsam excepturi pariatur modi sit id enim odit hic corporis.
+            </p>
+            <button>En savoir plus</button>
+        </div>
+    </div>
+    <!-- Section newsletter -->
+    <div class="newsletter">
+        <div class="container">
+            <h3>Koala newsletter</h3>
+            <p>Soyez informé des nouveaux produits</p>
+        </div>
+        <input type="Entre ton email ici">
+    </div>
+    <footer>
+        <div class="footer">
+            <img src="assets/footer-logo-wordmark.svg" alt="Logo Wordmark KoalaKey">
+            <img src="" alt="Logo Twitter">
+            <img src="" alt="Logo Instagram">
+            <a href="">Mentions légales</a>
+            <a href="">Plan du site</a>
+        </div>
+    </footer>
 </body>
 </html>
