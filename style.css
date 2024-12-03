@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Sora";
+    src:
+    url("fonts/Sora-Regular.ttf"),
+    url("fonts/Sora-Bold.ttf");
+}
+
+html {
+    font-family: Sora;
+}
+
+/* .header-logo {
+    width: 40px;
+    height: 40px;
+} */
