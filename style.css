@@ -1,15 +1,37 @@
+/* CSS CLEANER */
+html, body {
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  ul, ol {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+/* CSS CLEANER */
+
 @font-face {
-    font-family: "Sora";
-    src:
-    url("fonts/Sora-Regular.ttf"),
-    url("fonts/Sora-Bold.ttf");
+    font-family: "Sora Regular";
+    src: url("fonts/Sora-Regular.ttf") format(truetype);
+}
+
+@font-face {
+  font-family: "Sora Bold";
+  src: url("fonts/Sora-Bold.ttf"), format(truetype);
 }
 
 html {
-    font-family: Sora;
+    font-family: "Sora Regular";
 }
-
-/* .header-logo {
-    width: 40px;
-    height: 40px;
-} */
