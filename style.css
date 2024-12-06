@@ -22,16 +22,222 @@ html, body {
   }
 /* CSS CLEANER */
 
+/* FONTS */
 @font-face {
     font-family: "Sora Regular";
     src: url("fonts/Sora-Regular.ttf") format(truetype);
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
   font-family: "Sora Bold";
-  src: url("fonts/Sora-Bold.ttf"), format(truetype);
+  src: url("fonts/Sora-Bold.ttf") format(truetype);
+  font-weight: bold;
+  font-style: normal;
+}
+/* FONTS */
+
+body {
+    font-family: "Sora Regular";
+    background-color: #FAF8F5;
 }
 
-html {
-    font-family: "Sora Regular";
+h2, h3 {
+  font-family: "Sora Bold";
+}
+
+
+/* Section Header */
+/* Style de base */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #8BA888;
+  padding: 15px;
+  position: relative;
+  z-index: 2; /* Assurez-vous que le header reste au-dessus du carrousel */
+}
+
+/* Logo du header */
+.header-logo {
+  height: 50px;
+  z-index: 3; /* Le logo doit être au-dessus du carrousel */
+}
+
+/* Style du bouton burger */
+.burger-menu {
+  display: none; /* Le bouton burger est masqué par défaut */
+  width: 30px; /* Ajuste la taille du bouton burger si nécessaire */
+  height: 30px; /* Ajuste la taille du bouton burger si nécessaire */
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Ajouté pour gérer le z-index */
+  z-index: 10; /* Ajouté pour que le burger apparaisse devant */
+}
+
+/* Style de l'icône SVG dans le bouton burger */
+.burger-menu .burger-icon {
+  width: 100%; /* L'icône SVG occupe toute la largeur du bouton */
+  height: auto; /* Conserver les proportions de l'icône */
+}
+
+/* Menu */
+nav.menu {
+  display: flex;
+  gap: 20px;
+  z-index: 5; /* Menu avec un z-index plus bas que le burger */
+}
+
+/* Sur les petits écrans (moins de 768px) */
+@media screen and (max-width: 768px) {
+  /* Masquer le menu par défaut */
+  nav.menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      right: 0;
+      background-color: #8BA888;
+      text-align: center;
+      padding-top: 20px;
+      z-index: 5; /* Menu avec un z-index plus bas que le burger */
+  }
+
+  /* Affichage du bouton burger */
+  .burger-menu {
+      display: flex;
+      z-index: 10; /* Le bouton burger doit être au-dessus du menu */
+  }
+
+  /* Afficher le menu quand il a la classe "active" */
+  nav.menu.active {
+      display: block;
+  }
+
+  /* Adapter les liens du menu pour qu'ils soient affichés verticalement */
+  nav.menu a {
+      display: block;
+      padding: 15px;
+      font-size: 1.2rem;
+      color: #262626;
+      text-decoration: none;
+      border-top: 1px solid #262626;
+  }
+
+  /* Ajouter un border-top au premier lien "Accueil" quand le menu est ouvert */
+  nav.menu.active a:first-child {
+      border-top: 1px solid #262626;
+  }
+
+  /* Retirer le border-top sur le premier lien "Accueil" quand le menu est fermé */
+  nav.menu a:first-child {
+      border-top: none;
+  }
+
+  /* Ajouter un border-bottom au dernier lien "À propos" quand le menu est ouvert */
+  nav.menu.active a:last-child {
+      border-bottom: 1px solid #262626;
+  }
+}
+
+/* Sur les grands écrans (plus de 768px) */
+@media screen and (min-width: 769px) {
+  /* Affichage classique du menu horizontal */
+  nav.menu {
+    display: flex; /* Afficher le menu horizontal */
+    position: static; /* Le menu n'est plus en position absolue */
+    background-color: transparent; /* Supprimer le fond du menu */
+    text-align: initial; /* Supprimer le centrage du texte */
+    padding-top: 0; /* Retirer le padding top supplémentaire */
+  }
+
+  /* Masquer le bouton burger sur les grands écrans */
+  .burger-menu {
+    display: none; /* Le bouton burger est masqué */
+  }
+
+  /* Adapter les liens du menu pour les grands écrans */
+  nav.menu a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #262626;
+    text-decoration: none;
+  }
+
+  /* Assurez-vous que les liens sont visibles et non cachés */
+  nav.menu a:hover {
+    color: #fff; /* Exemple d'effet sur hover */
+    background-color: #6a8d7e;
+  }
+}
+
+/* Section carrousel */
+.carrousel {
+  position: relative;
+  width: 100%;
+  max-width: 800px; /* Ajustez la largeur selon vos besoins */
+  overflow: hidden; /* Masquer les autres images */
+  z-index: 1; /* Le carrousel est en dessous du menu et du burger */
+}
+
+/* Contenu du carrousel avec les slides */
+.carrousel-contenu {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Chaque slide prend 100% de la largeur du carrousel */
+.slide {
+  width: 100%;
+  flex-shrink: 0; /* Empêche les images de se réduire */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Controles (précédent et suivant) */
+.carrousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
+/* Style des boutons SVG */
+.carrousel-controls button {
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.carrousel-controls button:hover {
+  opacity: 0.7;
+}
+
+.carrousel-controls img {
+  width: 30px;  /* Ajustez la taille des icônes SVG */
+  height: 30px;
+}
+
+/* Position du bouton "Précédent" à gauche et "Suivant" à droite */
+#prev {
+  left: 10px;
+}
+
+#next {
+  right: 10px;
 }
