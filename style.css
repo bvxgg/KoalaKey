@@ -36,6 +36,7 @@ html, body {
   font-weight: bold;
   font-style: normal;
 }
+
 /* FONTS */
 
 body {
@@ -48,7 +49,7 @@ h2, h3 {
 }
 
 
-/* Section Header */
+/* HEADER */
 /* Style de base */
 header {
   display: flex;
@@ -175,15 +176,86 @@ nav.menu {
   /* Assurez-vous que les liens sont visibles et non cachés */
   nav.menu a:hover {
     color: #fff; /* Exemple d'effet sur hover */
-    background-color: #6a8d7e;
+    background-color: #8BA888;
   }
 }
+/* HEADER */
 
-/* Section carrousel */
+/* FOOTER */
+/* Styles de base pour le footer */
+footer {
+  background-color: #8BA888; /* Couleur de fond sombre */
+  padding: 30px 0; /* Espacement en haut et en bas du footer */
+}
+
+.footer {
+  margin: 0 auto; /* Centrer le footer */
+  padding: 0 20px; /* Espacement intérieur gauche et droite */
+  display: flex;
+  justify-content: space-between; /* Espacement entre les sections */
+  align-items: center; /* Alignement vertical des éléments */
+  text-align: center;
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: flex-start; /* Alignement des logos à gauche */
+  gap: 20px; /* Espacement entre les logos */
+}
+
+.footer-logos img {
+  height: 30px; /* Taille des logos */
+  width: auto;
+}
+
+/* Styles pour les liens du footer */
+.footer-links {
+  display: flex;
+  justify-content: flex-end; /* Alignement des liens à droite */
+  gap: 20px; /* Espacement entre les liens */
+}
+
+.footer-links a {
+  color: #262626; /* Liens en blanc */
+  text-decoration: none; /* Pas de soulignement */
+  font-size: 14px; /* Taille de police des liens */
+}
+
+/* Responsivité : pour les petits écrans, les éléments se wrap et sont centrés */
+@media (max-width: 768px) {
+  .footer {
+      flex-direction: column; /* Empile les éléments en colonne */
+      align-items: center; /* Centrer tous les éléments sur mobile */
+      padding: 20px;
+      text-align: center; /* Centrer le texte sur mobile */
+  }
+
+  .footer-logos, .footer-links {
+      flex-wrap: wrap; /* Permet aux éléments de se wrap sur plusieurs lignes */
+      gap: 10px; /* Espacement réduit entre les éléments */
+      justify-content: center; /* Centrer les éléments dans chaque section */
+  }
+
+  .footer-links {
+      margin-top: 20px; /* Espacement entre les logos et les liens sur mobile */
+      flex-direction: column; /* Empiler les liens en colonne */
+  }
+
+  /* Changer l'ordre des éléments sur mobile pour que "Plan du site" apparaisse après "Mentions légales" */
+  .footer-links a:nth-child(1) {
+      order: 1; /* Mentions légales en premier */
+  }
+
+  .footer-links a:nth-child(2) {
+      order: 2; /* Plan du site en deuxième */
+  }
+}
+/* FOOTER */
+
+/* CARROUSEL */
 .carrousel {
   position: relative;
   width: 100%;
-  max-width: 800px; /* Ajustez la largeur selon vos besoins */
   overflow: hidden; /* Masquer les autres images */
   z-index: 1; /* Le carrousel est en dessous du menu et du burger */
 }
@@ -192,6 +264,7 @@ nav.menu {
 .carrousel-contenu {
   display: flex;
   transition: transform 0.5s ease-in-out;
+  position: relative; /* Important pour la gestion de la superposition */
 }
 
 /* Chaque slide prend 100% de la largeur du carrousel */
@@ -201,9 +274,18 @@ nav.menu {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative; /* Important pour la gestion de la superposition */
 }
 
-/* Controles (précédent et suivant) */
+/* Assurer que l'image prend toute la largeur et reste proportionnelle */
+.slide img {
+  width: 100%; /* L'image prend toute la largeur de la slide */
+  height: auto; /* L'image garde ses proportions */
+  z-index: 1; /* Les images sont sous les contrôles mais restent cliquables */
+  pointer-events: auto; /* Permet de cliquer sur les images */
+}
+
+/* Contrôles (précédent et suivant) */
 .carrousel-controls {
   position: absolute;
   top: 50%;
@@ -213,31 +295,117 @@ nav.menu {
   justify-content: space-between;
   transform: translateY(-50%);
   width: 100%;
+  z-index: 2; /* Les boutons doivent être au-dessus des images */
+  pointer-events: auto; /* Permet de cliquer sur les boutons */
 }
 
 /* Style des boutons SVG */
 .carrousel-controls button {
   background: none;
   border: none;
-  padding: 10px;
+  padding: 5px;  /* Réinitialise le padding pour maintenir la taille originale */
   cursor: pointer;
-  transition: opacity 0.3s;
+  z-index: 3; /* Les boutons sont au-dessus des images */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: auto; /* Les boutons sont cliquables */
 }
 
-.carrousel-controls button:hover {
-  opacity: 0.7;
-}
-
-.carrousel-controls img {
-  width: 30px;  /* Ajustez la taille des icônes SVG */
-  height: 30px;
-}
-
-/* Position du bouton "Précédent" à gauche et "Suivant" à droite */
+/* Positionner les boutons à gauche et à droite */
 #prev {
-  left: 10px;
+  left: 10px;  /* Positionnement du bouton précédent */
 }
 
 #next {
-  right: 10px;
+  right: 10px;  /* Positionnement du bouton suivant */
+}
+
+.carrousel-controls img {
+  width: 100px;  /* Taille originale des icônes SVG */
+  height: 100px; /* Taille originale des icônes SVG */
+}
+
+@media (max-width: 768px) {
+  .carrousel-controls img {
+    width: 50px;  /* Ajuste la taille des icônes SVG sur les petits écrans */
+    height: 50px;
+  }
+}
+/* CARROUSEL */
+.newsletter {
+  position: relative;
+  background-image: url("assets/accueil-newsletter-1.jpg"); /* Remplace par l'URL de ton image */
+  background-size: cover; /* L'image prend tout l'espace */
+  background-position: center; /* L'image est centrée */
+  padding: 40px 0; /* Marge intérieure pour la newsletter */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px; /* Hauteur minimale */
+  text-align: center;
+  color: #FAF8F5;
+}
+
+.newsletter-contenu {
+  background-color: rgba(96, 102, 96, 0.75); /* Fond gris avec transparence */
+  margin: 0 15px;
+  padding: 20px 30px;
+  border-radius: 10px; /* Coins arrondis */
+  max-width: 600px; /* Limite de largeur */
+  width: 100%;
+}
+
+/* Styles pour le texte de la newsletter */
+.newsletter-text h3 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.newsletter-text p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Styles pour le formulaire */
+.newsletter-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.newsletter-input input {
+  padding: 10px;
+  font-size: 14px;
+  width: 70%; /* Largeur de l'input */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Styles pour le bouton avec l'image SVG */
+.newsletter-input button {
+  padding: 0; /* On enlève le padding, car on n'a pas besoin de marge intérieure */
+  background-color: transparent; /* Le bouton n'a pas de fond */
+  border: none; /* On enlève la bordure */
+  cursor: pointer; /* Le curseur change pour indiquer que c'est cliquable */
+  display: inline-flex; /* Utilisation de flexbox pour aligner correctement l'image */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Taille et alignement de l'icône SVG */
+.newsletter-icon {
+  width: 41px; /* Taille de l'image, à ajuster */
+  height: 41px; /* Taille de l'image, à ajuster */
+  object-fit: contain; /* L'image conserve ses proportions */
+}
+
+@media (min-width: 768px) {
+  .newsletter {
+      margin: 100px 50px;
+      border-radius: 20px;
+      overflow: hidden;
+  }
 }
