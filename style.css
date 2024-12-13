@@ -36,7 +36,6 @@ html, body {
   font-weight: bold;
   font-style: normal;
 }
-
 /* FONTS */
 
 body {
@@ -58,20 +57,20 @@ header {
   background-color: #8BA888;
   padding: 15px;
   position: relative;
-  z-index: 2; /* Assurez-vous que le header reste au-dessus du carrousel */
+  z-index: 2;
 }
 
 /* Logo du header */
 .header-logo {
   height: 50px;
-  z-index: 3; /* Le logo doit être au-dessus du carrousel */
+  z-index: 3;
 }
 
 /* Style du bouton burger */
 .burger-menu {
-  display: none; /* Le bouton burger est masqué par défaut */
-  width: 30px; /* Ajuste la taille du bouton burger si nécessaire */
-  height: 30px; /* Ajuste la taille du bouton burger si nécessaire */
+  display: none;
+  width: 30px;
+  height: 30px;
   background: none;
   border: none;
   cursor: pointer;
@@ -79,24 +78,23 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; /* Ajouté pour gérer le z-index */
-  z-index: 10; /* Ajouté pour que le burger apparaisse devant */
+  position: relative;
+  z-index: 10;
 }
 
 /* Style de l'icône SVG dans le bouton burger */
 .burger-menu .burger-icon {
-  width: 100%; /* L'icône SVG occupe toute la largeur du bouton */
-  height: auto; /* Conserver les proportions de l'icône */
+  width: 100%;
+  height: auto;
 }
 
 /* Menu */
 nav.menu {
   display: flex;
   gap: 20px;
-  z-index: 5; /* Menu avec un z-index plus bas que le burger */
+  z-index: 5;
 }
 
-/* Sur les petits écrans (moins de 768px) */
 @media screen and (max-width: 768px) {
   /* Masquer le menu par défaut */
   nav.menu {
@@ -108,13 +106,13 @@ nav.menu {
       background-color: #8BA888;
       text-align: center;
       padding-top: 20px;
-      z-index: 5; /* Menu avec un z-index plus bas que le burger */
+      z-index: 5;
   }
 
   /* Affichage du bouton burger */
   .burger-menu {
       display: flex;
-      z-index: 10; /* Le bouton burger doit être au-dessus du menu */
+      z-index: 10;
   }
 
   /* Afficher le menu quand il a la classe "active" */
@@ -146,22 +144,25 @@ nav.menu {
   nav.menu.active a:last-child {
       border-bottom: 1px solid #262626;
   }
+
+  nav.menu a:hover {
+    color: #FAF8F5;
+  }
 }
 
-/* Sur les grands écrans (plus de 768px) */
 @media screen and (min-width: 769px) {
   /* Affichage classique du menu horizontal */
   nav.menu {
-    display: flex; /* Afficher le menu horizontal */
-    position: static; /* Le menu n'est plus en position absolue */
-    background-color: transparent; /* Supprimer le fond du menu */
-    text-align: initial; /* Supprimer le centrage du texte */
-    padding-top: 0; /* Retirer le padding top supplémentaire */
+    display: flex;
+    position: static;
+    background-color: transparent;
+    text-align: initial;
+    padding-top: 0;
   }
 
   /* Masquer le bouton burger sur les grands écrans */
   .burger-menu {
-    display: none; /* Le bouton burger est masqué */
+    display: none;
   }
 
   /* Adapter les liens du menu pour les grands écrans */
@@ -175,8 +176,7 @@ nav.menu {
 
   /* Assurez-vous que les liens sont visibles et non cachés */
   nav.menu a:hover {
-    color: #fff; /* Exemple d'effet sur hover */
-    background-color: #8BA888;
+    color: #FAF8F5;
   }
 }
 /* HEADER */
@@ -333,6 +333,8 @@ footer {
   }
 }
 /* CARROUSEL */
+
+/* NEWSLETTER */
 .newsletter {
   position: relative;
   background-image: url("assets/accueil-newsletter-1.jpg"); /* Remplace par l'URL de ton image */
@@ -404,8 +406,191 @@ footer {
 
 @media (min-width: 768px) {
   .newsletter {
-      margin: 100px 50px;
+      margin: 100px 50px 75px;
       border-radius: 20px;
-      overflow: hidden;
   }
 }
+/* NEWSLETTER */
+
+/* NOUVEAUTES */
+/* Section .featured */
+.featured {
+  text-align: center;
+  margin: 50px 0px;
+}
+
+.featured h2 {
+  margin-bottom: 50px;
+}
+
+/* Style pour la liste des produits */
+.features-contenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Espacement entre les éléments */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.features-contenu li {
+  text-align: center;
+  width: 22%; /* Largeur de l'élément pour un affichage sur une seule ligne */
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Pour que le padding/margin ne dépasse pas la largeur de l'élément */
+  transition: transform 0.3s ease;
+}
+
+.features-contenu a {
+  display: block;
+}
+
+.features-contenu img {
+  width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+  max-width: 300px; /* Limite la taille de l'image à 300px de large */
+  height: auto; /* Conserve les proportions */
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* Optionnel : pour arrondir les coins de l'image */
+}
+
+.features-contenu li:hover {
+  transform: scale(1.05);
+}
+
+.features-contenu a + a {
+  color: #262626;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Mise en forme du bouton "Plus" */
+.button {
+  background-color: #8BA888;
+  color: #262626;
+  text-decoration: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 30px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #7a9e7a;
+}
+
+/* Réactivité : Affichage sur une seule ligne sur grand écran, 2 éléments par ligne en dessous de 768px */
+@media screen and (max-width: 768px) {
+  .features-contenu ul {
+      justify-content: center; /* Centrer les éléments de la liste sur petits écrans */
+  }
+
+  .features-contenu li {
+      width: 44%; /* Ajuste la largeur à 48% pour avoir 2 éléments par ligne */
+      margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .features-contenu img {
+      max-width: 200px; /* Réduit un peu la taille des images pour s'adapter à l'écran plus petit */
+  }
+}
+/* NOUVEAUTES */
+
+/* HISTOIRE */
+.about {
+  margin-top: 75px;
+  margin-bottom: 75px;
+}
+
+.about h2 {
+  text-align: center;
+}
+/* Conteneur principal */
+.about-contenu-1 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer le contenu horizontalement */
+  gap: 20px;
+  width: 80%;
+  max-width: 1200px; /* Limite la largeur maximale */
+  margin: 50px auto; /* Centrage du conteneur */
+}
+
+/* Style de l'image */
+.about-contenu-1 img {
+  width: 50%; /* L'image occupe 50% de la largeur */
+  height: auto;
+  border-radius: 8px; /* Optionnel : pour arrondir les coins de l'image */
+}
+
+/* Section texte */
+.about-text-1 {
+  flex: 1; /* Le texte occupe l'espace restant */
+}
+
+/* Media query pour les écrans plus petits (moins de 768px) */
+@media screen and (max-width: 768px) {
+  .about-contenu-1 {
+      flex-direction: column; /* En mode mobile, empile l'image et le texte */
+      align-items: center; /* Centre les éléments */
+      text-align: center; /* Centrer le texte dans la section */
+  }
+
+  .about-contenu-1 img {
+      width: 80%; /* L'image occupe 80% de la largeur sur mobile */
+  }
+
+  .about-text-1 {
+      width: 90%; /* Le texte occupe 90% de la largeur sur mobile */
+  }
+}
+
+/* Conteneur principal */
+.about-contenu-2 {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centrer le contenu horizontalement */
+  gap: 20px;
+  width: 80%;
+  max-width: 1200px; /* Limite la largeur maximale */
+  margin: 75px auto; /* Centrage du conteneur */
+  flex-direction: row-reverse; /* Positionner l'image à droite */
+}
+
+/* Style de l'image */
+.about-contenu-2 img {
+  width: 50%; /* L'image occupe 50% de la largeur */
+  height: auto;
+  border-radius: 8px; /* Optionnel : pour arrondir les coins de l'image */
+}
+
+/* Section texte */
+.about-text-2 {
+  flex: 1; /* Le texte occupe l'espace restant */
+}
+
+/* Media query pour les écrans plus petits (moins de 768px) */
+@media screen and (max-width: 768px) {
+  .about-contenu-2 {
+      flex-direction: column; /* En mode mobile, empile l'image et le texte */
+      align-items: center; /* Centre les éléments */
+      text-align: center; /* Centrer le texte dans la section */
+  }
+
+  .about-contenu-2 img {
+      width: 80%; /* L'image occupe 80% de la largeur sur mobile */
+  }
+
+  .about-text-2 {
+      width: 90%; /* Le texte occupe 90% de la largeur sur mobile */
+  }
+}
+
+/* HISTOIRE */
