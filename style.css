@@ -603,10 +603,10 @@ footer {
 
 /* HISTOIRE */
 
-/* CATEGORIES */
+/* CATEGORIES PRODUITS */
 
 .category {
-margin: 50px auto;
+margin: 50px 50px;
 }
 
 .category h2{
@@ -664,6 +664,11 @@ margin: 50px auto;
 
 /* Media Query pour les écrans plus petits */
 @media (max-width: 768px) {
+
+  .category {
+    margin: 50px auto;
+    }
+
   .category-contenu ul {
       flex-direction: column;
       align-items: center;
@@ -673,5 +678,167 @@ margin: 50px auto;
       margin-bottom: 20px;
   }
 }
+/* CATEGORIES PRODUITS*/
 
-/* CATEGORIES */
+/* PRODUITS NOUVEAUTES */
+.produits-featured {
+  margin: 50px 0px;
+}
+
+.produits-featured h2 {
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+/* Style pour la liste des produits */
+.produits-features-contenu ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Espacement entre les éléments */
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+.produits-features-contenu li {
+  text-align: center;
+  width: 22%; /* Largeur de l'élément pour un affichage sur une seule ligne */
+  margin-bottom: 20px;
+  box-sizing: border-box; /* Pour que le padding/margin ne dépasse pas la largeur de l'élément */
+  transition: transform 0.3s ease;
+}
+
+.produits-features-contenu li:hover {
+  transform: scale(1.05);
+}
+
+.produits-features-contenu a {
+  display: block;
+}
+
+.produits-features-contenu img {
+  width: 100%; /* L'image occupe 100% de la largeur de son conteneur */
+  max-width: 300px; /* Limite la taille de l'image à 300px de large */
+  height: auto; /* Conserve les proportions */
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px; /* Optionnel : pour arrondir les coins de l'image */
+}
+
+.produits-features-contenu a + a {
+  color: #262626;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.featured-controls {
+  display: flex; /* Utilise flexbox pour aligner les boutons horizontalement */
+  justify-content: center; /* Centrer les boutons horizontalement */
+  gap: 20px; /* Espace entre les boutons */
+}
+
+.featured-controls button {
+  background: none; /* Retirer le fond par défaut des boutons */
+  border: none; /* Retirer la bordure par défaut des boutons */
+}
+
+.featured-controls img {
+  width: 75px; /* Assurez-vous que les images ont une taille visible */
+  height: 75px; /* Garder les proportions des images */
+}
+
+
+/* Réactivité : Affichage sur une seule ligne sur grand écran, 2 éléments par ligne en dessous de 768px */
+@media screen and (max-width: 768px) {
+  .produits-features-contenu ul {
+      justify-content: center; /* Centrer les éléments de la liste sur petits écrans */
+  }
+
+  .produits-features-contenu li {
+      width: 44%; /* Ajuste la largeur à 48% pour avoir 2 éléments par ligne */
+      margin-bottom: 20px;
+      margin-left: 10px;
+      margin-right: 10px;
+  }
+
+  .produits-features-contenu img {
+      max-width: 200px; /* Réduit un peu la taille des images pour s'adapter à l'écran plus petit */
+  }
+
+  .featured-controls img {
+    width: 50px; /* Assurez-vous que les images ont une taille visible */
+    height: 50px; /* Garder les proportions des images */
+  }
+}
+/* PRODUITS NOUVEAUTES */
+
+/* PRODUITS CARROUSEL */
+.carousel-container {
+  width: 100%;
+  position: relative;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+}
+
+.controls-container {
+  display: flex;
+  justify-content: flex-start; /* Positionnement par défaut */
+  align-items: center;
+  background-color: #262626;
+  padding: 10px;
+  margin-top: -1px;
+  width: 100%;
+}
+
+.carousel-caption {
+  font-size: 18px;
+  color: #FAF8F5;
+  text-align: left;
+  padding-left: 20px;
+  flex: 1;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+}
+
+.controls button {
+  background-color: transparent;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.controls button img {
+  width: 75px; /* Taille des images de flèches */
+  height: 75px;
+}
+
+@media screen and (max-width: 768px) {
+  .controls-container {
+    justify-content: space-between; /* Pour les petits écrans, on garde l'espacement entre les éléments */
+  }
+
+  .controls button img {
+    width: 50px; /* Taille des images de flèches */
+    height: 50px;
+  }
+}
+/* PRODUITS CARROUSEL */
