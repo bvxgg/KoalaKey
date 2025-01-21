@@ -1,3 +1,19 @@
+/* FONTS */
+@font-face {
+  font-family: "Sora Regular";
+  src: url("fonts/Sora-Regular.ttf") format(truetype);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+font-family: "Sora Bold";
+src: url("fonts/Sora-Bold.ttf") format(truetype);
+font-weight: bold;
+font-style: normal;
+}
+/* FONTS */
+
 /* CSS CLEANER */
 html, body {
     margin: 0 auto;
@@ -22,22 +38,6 @@ html, body {
   }
 /* CSS CLEANER */
 
-/* FONTS */
-@font-face {
-    font-family: "Sora Regular";
-    src: url("fonts/Sora-Regular.ttf") format(truetype);
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-  font-family: "Sora Bold";
-  src: url("fonts/Sora-Bold.ttf") format(truetype);
-  font-weight: bold;
-  font-style: normal;
-}
-/* FONTS */
-
 body {
     font-family: "Sora Regular";
     background-color: #FAF8F5;
@@ -59,7 +59,14 @@ header {
   z-index: 2;
 }
 
-.header-logo {
+.header-logo-small {
+  display: block;
+  height: 50px;
+  z-index: 3;
+}
+
+.header-logo-large {
+  display: none;
   height: 50px;
   z-index: 3;
 }
@@ -139,6 +146,14 @@ nav.menu {
 }
 
 @media screen and (min-width: 769px) {
+  .header-logo-small {
+    display: none;
+  }
+
+  .header-logo-large {
+    display: block;
+  }
+
   nav.menu {
     display: flex;
     position: static;
@@ -266,7 +281,13 @@ footer {
   pointer-events: auto;
 }
 
-.carrousel-controls {
+.carrousel-
+
+
+
+
+
+{
   position: absolute;
   top: 50%;
   left: 0;
@@ -785,5 +806,21 @@ margin: 50px 50px;
     width: 50px;
     height: 50px;
   }
+}
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carrousel-contenu {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  transition: opacity 0.5s ease-in-out;
 }
 /* PRODUITS CARROUSEL */
