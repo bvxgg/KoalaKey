@@ -128,9 +128,31 @@ document.addEventListener('DOMContentLoaded', () => {
         if ((currentPage + 1) * itemsPerPage < produitsItems.length) {
             currentPage++;
             updateProductDisplay();
-        }
+        }   
     });
 
     // Initialiser l'affichage avec les 4 premiers éléments
     updateProductDisplay();
+});
+
+// Récupération et affichage météo
+fetch("https://api.openweathermap.org/data/2.5/weather?q=Strasbourg,fr&appid=c21a75b667d6f7abb81f118dcf8d4611&units=metric")
+.then(function(res) {
+    return res.json();
+})
+.then(function(data) {
+    console.log(data);
+
+    const temperature = data.main.temp;
+    const ville = data.name;
+
+    let dataHTML = `
+        <p>La température actuelle à ${ville} est de ${temperature}°C.</p>
+    `;
+
+    document.getElementById('meteo').innerHTML = dataHTML;
+})
+.catch(function(error) {
+    console.error('Erreur lors de la récupération des données :', error);
+    document.getElementById('meteo').innerHTML = "<p>Impossible de récupérer les données météo.</p>";
 });
