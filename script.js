@@ -156,3 +156,33 @@ fetch("https://api.openweathermap.org/data/2.5/weather?q=Strasbourg,fr&appid=c21
     console.error('Erreur lors de la récupération des données :', error);
     document.getElementById('meteo').innerHTML = "<p>Impossible de récupérer les données météo.</p>";
 });
+
+// Fonctionalité ajax pour les actualités
+const container = document.querySelector(".articles-contenu ul");
+
+fetch("articles.json")
+.then(function(response){
+    return response.json()
+})
+.then(function(data){
+
+    let html = "";
+
+    data.forEach(function(article){
+        html += `
+            <li>
+                <a href="">
+                    <img src="${article.img}" alt="${article.alt}">
+                </a>
+                <a href="">
+                    <h3>${article.titre}</h3>
+                </a>
+                <p>${article.texte}</p>
+                <a href="" class="button-articles">Plus</a>
+            </li>
+        `
+
+    })
+
+    container.innerHTML = html;
+})

@@ -1,0 +1,20 @@
+[
+    {
+        "titre": "Le nouveau kit 60% de KBDFans",
+        "img" : "assets/articles-1.jpg",
+        "alt" : "Image Clavier Article 1",
+        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+    },
+    {
+        "titre": "Promotion du moment",
+        "img" : "assets/articles-2.jpg",
+        "alt" : "Image Clavier Article 2",
+        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+    },
+    {
+        "titre": "Les nouveautés de janvier",
+        "img" : "assets/articles-3.jpg",
+        "alt" : "Image Clavier Article 3",
+        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+    }
+]
