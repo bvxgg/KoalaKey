@@ -1,20 +1,23 @@
 [
     {
-        "titre": "Le nouveau kit 60% de KBDFans",
+        "titre": "Le nouveau Classic TKL arrive !",
         "img" : "assets/articles-1.jpg",
-        "alt" : "Image Clavier Article 1",
-        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+        "alt" : "Image Article 1",
+        "texte": "Le Classic-TKL est un clavier Tenkeyless abordable à partir de 89 USD, offrant une qualité de fabrication solide et un design soigné avec des éléments lumineux et un PCB hot-swappable. Conçu pour séduire à la fois les débutants et les passionnés, il combine un excellent rapport qualité-prix, une personnalisation facile et un son ...",
+        "lien": "../actualites/le-nouveau-classic-tkl-arrive.html"
     },
     {
         "titre": "Promotion du moment",
         "img" : "assets/articles-2.jpg",
-        "alt" : "Image Clavier Article 2",
-        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+        "alt" : "Image Article 2",
+        "texte": "Profitez des promotions exceptionnelles en ce moment chez KoalaKey à Strasbourg ! Claviers mécaniques, keycaps personnalisés et switches de qualité sont à prix réduits jusqu'à -25%. C’est l’occasion rêvée de personnaliser votre setup avec des produits haut de gamme tout en réalisant de belles économies. Ne manquez pas ces offres ...",
+        "lien": "../actualites/promotion-du-moment.html"
     },
     {
         "titre": "Les nouveautés de janvier",
         "img" : "assets/articles-3.jpg",
-        "alt" : "Image Clavier Article 3",
-        "texte": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Hic odio rem dolor nesciunt aspernatur optio iusto nemo exercitationem, natus eos at eveniet beatae soluta? Consequatur tempore illo qui tenetur alias."
+        "alt" : "Image Article 3",
+        "texte": "Nous avons reçu des claviers mécaniques dernier cri, des keycaps au design unique et des switches ultra-performants. Que tu sois un gamer passionné ou un amateur de personnalisation, notre boutique est l'endroit idéal pour découvrir les nouveautés qui vont transformer ton expérience de frappe. Viens tester les dernières tendances ...",
+        "lien": "../actualites/les-nouveautes-de-janvier.html"
     }
 ]

@@ -51,9 +51,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const slides = document.querySelectorAll('.carrousel-contenu .slide');
     const totalSlides = slides.length;
     const captions = [
-        "Clavier mécanique",  // Titre pour la première image
-        "Clavier RGB",        // Titre pour la deuxième image
-        "Clavier sans fil",   // Titre pour la troisième image
+        "Project Space 65",  // Titre pour la première image
+        "Metal Alice",        // Titre pour la deuxième image
+        "Wood 65",   // Titre pour la troisième image
     ]; // Tableau contenant les légendes pour chaque slide
     const captionElement = document.querySelector('.carousel-caption');  // Élément où le texte sera changé
 
@@ -171,14 +171,14 @@ fetch("articles.json")
     data.forEach(function(article){
         html += `
             <li>
-                <a href="">
+                <a href="${article.lien}">
                     <img src="${article.img}" alt="${article.alt}">
                 </a>
-                <a href="">
+                <a href="${article.lien}">
                     <h3>${article.titre}</h3>
                 </a>
                 <p>${article.texte}</p>
-                <a href="" class="button-articles">Plus</a>
+                <a href="${article.lien}" class="button-articles">Plus</a>
             </li>
         `
 
