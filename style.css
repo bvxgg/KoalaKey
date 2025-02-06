@@ -52,6 +52,9 @@ p {
   color: #262626;
 }
 
+.hidden {
+  display: none;
+}
 
 /* HEADER */
 header {
@@ -199,7 +202,7 @@ footer {
   margin: 0 auto; 
   padding: 0 20px; 
   display: flex;
-  justify-content: space-between; 
+  justify-content: space-around; 
   align-items: center; 
   text-align: center;
 }
@@ -916,7 +919,8 @@ margin: 50px 50px;
 
 /* ACTUALITES */
 .articles {
-  margin: 50px 0px;
+  margin-top: 75px;
+  margin-bottom: 50px;
 }
 
 .articles h2 {
@@ -931,6 +935,7 @@ margin: 50px 50px;
   justify-content: space-around; 
   list-style: none;
   margin-bottom: 25px;
+  width: 85%;
 }
 
 .articles-contenu li {
@@ -983,6 +988,7 @@ margin: 50px 50px;
   .articles-contenu ul {
     flex-direction: column;
     align-items: center;
+    width: auto;
   }
   .articles-contenu li {
     width: 80%;
