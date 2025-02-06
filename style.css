@@ -56,7 +56,7 @@ p {
 /* HEADER */
 header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   background-color: #8BA888;
   padding: 15px;
@@ -103,6 +103,10 @@ nav.menu {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+
   nav.menu {
       display: none;
       position: absolute;
@@ -324,7 +328,6 @@ footer {
   background-image: url("assets/accueil-newsletter-1.jpg"); 
   background-size: cover; 
   background-position: center; 
-  padding: 40px 0; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -388,7 +391,7 @@ footer {
 
 @media (min-width: 768px) {
   .newsletter {
-      margin: 100px 50px 75px;
+      margin: 100px 100px 75px;
       border-radius: 20px;
   }
 }
@@ -402,6 +405,7 @@ footer {
 
 .featured h2 {
   margin-bottom: 50px;
+  font-size: 1.8rem;
 }
 
 .features-contenu ul {
@@ -411,6 +415,7 @@ footer {
   list-style: none;
   padding: 0;
   margin-bottom: 25px;
+  width: 85%;
 }
 
 .features-contenu li {
@@ -463,7 +468,8 @@ footer {
 
 @media screen and (max-width: 768px) {
   .features-contenu ul {
-      justify-content: center; 
+      justify-content: center;
+      width: auto;
   }
 
   .features-contenu li {
@@ -487,6 +493,7 @@ footer {
 
 .history h2 {
   text-align: center;
+  font-size: 1.8rem;
 }
 
 .history p {
@@ -577,10 +584,11 @@ margin: 50px 50px;
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 1.8rem;
 }
 
 .category-contenu {
-  padding: 20px;
+  padding: 20px 50px;
   background-color: #f9f9f9;
 }
 
@@ -624,6 +632,10 @@ margin: 50px 50px;
     margin: 50px auto;
     }
 
+  .category-contenu {
+    padding: 20px;
+  }
+
   .category-contenu ul {
       flex-direction: column;
       align-items: center;
@@ -643,6 +655,7 @@ margin: 50px 50px;
 .produits-featured h2 {
   margin-bottom: 50px;
   text-align: center;
+  font-size: 1.8rem;
 }
 .produits-features-contenu ul {
   display: flex;
@@ -651,6 +664,7 @@ margin: 50px 50px;
   list-style: none;
   padding: 0;
   margin-bottom: 25px;
+  width: 85%;
 }
 
 .produits-features-contenu li {
@@ -704,6 +718,7 @@ margin: 50px 50px;
 @media screen and (max-width: 768px) {
   .produits-features-contenu ul {
       justify-content: center;
+      width: auto;
   }
 
   .produits-features-contenu li {
@@ -907,6 +922,7 @@ margin: 50px 50px;
 .articles h2 {
   text-align: center;
   margin-bottom: 50px;
+  font-size: 1.8rem;
 }
 
 .articles-contenu ul {
@@ -988,6 +1004,7 @@ margin: 50px 50px;
 
 .about h2 {
   text-align: center;
+  font-size: 1.8rem;
 }
 
 .about-contenu-1 {
@@ -1031,10 +1048,6 @@ margin: 50px 50px;
   flex: 1;
 }
 
-.horaires h2{
-  text-align: center;
-}
-
 .horaires p {
   text-align: center;
   margin-top: 50px;
@@ -1057,7 +1070,6 @@ margin: 50px 50px;
 }
 
 .map h2 {
-  text-align: center;
   margin-bottom: 50px;
 }
 
@@ -1173,7 +1185,6 @@ margin: 50px 50px;
 }
 
 @media screen and (max-width: 768px) {
-
   .produits {
     margin-top: 0px;
     margin-bottom: 75px;
@@ -1219,10 +1230,10 @@ margin: 50px 50px;
 .post-text {
   width: 80%;
   margin: auto;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 768px) {
-
   .post {
     margin-top: 0px;
     margin-bottom: 75px;
